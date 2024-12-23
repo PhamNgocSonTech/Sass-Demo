@@ -125,3 +125,44 @@ $primary-color: red;
     color: #666;
   }
 }
+
+// Center Mixins
+
+// Mixins no parameters
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixins with parameters
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// Mixins with default parameters
+@mixin sizeDefault($width: 100px, $height: 100px) {
+  width: $width;
+  height: $height;
+}
+
+.center {
+  @include flexCenter;
+  @include size(200px, 200px);
+  background: green;
+  font: {
+    size: 30px;
+    width: 600px;
+  }
+}
+
+.box {
+  @include sizeDefault();
+  background: orchid;
+  font: {
+    size: 30px;
+    width: 500px;
+  }
+}

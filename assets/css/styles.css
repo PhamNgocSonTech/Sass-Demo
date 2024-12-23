@@ -47,4 +47,23 @@
   color: #666;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background: green;
+  font-size: 30px;
+  font-width: 600px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: orchid;
+  font-size: 30px;
+  font-width: 500px;
+}
+
 /*# sourceMappingURL=styles.css.map */
