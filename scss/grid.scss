@@ -1,3 +1,21 @@
-.container {
-  max-width: 1170px;
+@mixin grid($column, $spacing) {
+  --column: #{$column};
+  --spacing: #{$spacing};
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--spacing);
+
+  .item {
+    background: green;
+    width: calc(100% / var(--column) - var(--spacing));
+    margin-left: var(--spacing);
+  }
+}
+
+.list {
+  @include grid(4, 30px);
+  font: {
+    size: 20px;
+    weight: 20px;
+  }
 }
