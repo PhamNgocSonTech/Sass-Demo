@@ -6,16 +6,84 @@
   row-gap: var(--spacing);
 
   .item {
-    background: green;
     width: calc(100% / var(--column) - var(--spacing));
     margin-left: var(--spacing);
   }
 }
 
-.list {
-  @include grid(4, 30px);
-  font: {
-    size: 20px;
-    weight: 20px;
+@mixin screen($device) {
+  @if $device == tablet {
+    @media (max-width: 991.98px) {
+      @content;
+    }
+  }
+
+  @if $device == mobile {
+    @media (max-width: 575.98px) {
+      @content;
+    }
   }
 }
+
+.list {
+  @include grid(4, 30px);
+  //  Responsive Tablet
+
+  @include screen(tablet) {
+    --column: 2;
+    --spacing: 20px;
+  }
+
+  //  Responsive Mobile
+  @include screen(mobile) {
+    --column: 1;
+    --spacing: 10px;
+  }
+
+  .item {
+    background: green;
+    font: {
+      size: 20px;
+      weight: 600;
+    }
+  }
+}
+
+@mixin position($pos) {
+  @if $pos == top-left {
+    top: 0;
+    left: 0;
+  }
+  @if $pos == top-right {
+    top: 0;
+    right: 0;
+  }
+  @if $pos == bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+  @if $pos == bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+  @if $pos == center {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+}
+
+// .container {
+//   position: relative;
+//   height: 400px;
+//   background: #ccc;
+
+//   .item {
+//     @include position(top-right);
+//     // top-left, top-right, bottom-right, bottom-left, center
+//     position: absolute;
+//     width: 100px;
+//     height: 100px;
+//     background: olivedrab;
+//   }
+// }
