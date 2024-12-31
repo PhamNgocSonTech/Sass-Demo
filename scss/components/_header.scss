@@ -1,4 +1,17 @@
+// @use "../base/variables" as var;
+
+// @use "../base//mixins" as *;
+
+// .header {
+//   @include flexCenter;
+//   height: var.$header-height;
+//   background: orange;
+// }
+
+@use "../base";
+
 .header {
-  height: $header-height;
+  @include base.flexCenter;
+  height: base.$header-height;
   background: orange;
 }

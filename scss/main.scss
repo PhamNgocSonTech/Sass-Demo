@@ -1,15 +1,15 @@
 // Base
-@import "base/variables";
-@import "base/mixins";
+// @use "base/variables";
+// @use "base/mixins";
 
 // Common
-@import "base/reset";
-@import "base/common";
+// @import "base/reset";
+// @import "base/common";
 
 // Components
 @import "components/header";
-@import "components/navigation";
-@import "components/sidebar";
+// @import "components/navigation";
+// @import "components/sidebar";
 /**
  * Variables
  * Mixins
@@ -19,3 +19,10 @@
  * Navigation
  * Sidebar
  */
+
+header {
+  font: {
+    size: 20px;
+    weight: 600;
+  }
+}
